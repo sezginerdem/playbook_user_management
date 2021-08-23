@@ -6,7 +6,7 @@
 # Create devops group
   - name: Create Groups
     group:
-      name: testgorup1
+      name: testgroup1
 
 # Creata a user and add to a group
   - name: Add several users

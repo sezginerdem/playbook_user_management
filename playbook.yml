@@ -20,3 +20,11 @@
 #    user: serdem
 #   state: present
 #  key: "{{ lookup('file', '/home/serdem/.ssh/id_rsa.pub') }}"
+
+# Removing user
+  - name: Remove Users
+    user:
+      name: testuser1
+      state: absent
+      remove: yes 
+      force: yes

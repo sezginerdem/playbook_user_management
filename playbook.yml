@@ -1,18 +1,35 @@
 - name: Create Group, User and Deploy the Public Key
   hosts: all
   become: true
-  tasks:
 
-# Create devops group
+  vars:
+    group_name:
+    - name: testgroup1
+    - name: testgroup2
+    - name: testgroup3
+    - name: testgroup4
+    - name: testgroup5
+    - name: testgroup6
+  
+  vars_files:
+  - ./add_user.yml
+  - ./remove_user.yml
+
+  tasks:
+# Creating groups
   - name: Create Groups
     group:
-      name: testgroup1
+      name: "{{ item.name }}"
+    with_items: "{{ group_name }}"
 
-# Creata a user and add to a group
-  - name: Add several users
+# Create users and add to group 
+  - name: Add Users
     user:
-      name: testuser1
-      groups: testgroup1
+      name: "{{ item.name }}"
+      group: "{{ item.group }}"
+      state: present
+    with_items: 
+      - "{{ add_user }}"
 
 # Set autrorized key from file
 #  - name: Set authorized key taken from file
@@ -24,7 +41,9 @@
 # Removing user
   - name: Remove Users
     user:
-      name: testuser1
+      name: "{{ item.name }}"
       state: absent
       remove: yes 
       force: yes
+    with_items:
+      - "{{ remove_user }}"

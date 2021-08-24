@@ -14,8 +14,7 @@
   vars_files:
   - ./add_user.yml
   - ./remove_user.yml
-  - ./user_public_key.pub
-
+  
   tasks:
 # Creating groups
   - name: Create Groups

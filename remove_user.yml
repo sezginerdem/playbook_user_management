@@ -1,0 +1,3 @@
+# To remove user write down username
+remove_user:
+  - name: testuser1

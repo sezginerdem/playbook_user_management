@@ -14,8 +14,8 @@
   vars_files:
   - ./add_user.yml
   - ./remove_user.yml
-  
   tasks:
+
 # Creating groups
   - name: Create Groups
     group:
@@ -26,10 +26,9 @@
   - name: Add Users
     user:
       name: "{{ item.name }}"
-      group: "{{ item.group }}"
-      state: present
-    with_items: 
-      - "{{ add_user }}"
+      groups: [user_group_name]
+    loop: "{{ add_user }}"
+
 
 # Set authorized key from file
   - name: Set authorize keys taken from file

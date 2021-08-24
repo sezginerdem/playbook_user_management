@@ -25,26 +25,20 @@
 # Create users and add to group 
   - name: Add Users
     user:
-      name: "{{ item.name }}"
+      name: add_user
       groups: [user_group_name]
-    loop: "{{ add_user }}"
-
 
 # Set authorized key from file
   - name: Set authorize keys taken from file
     authorized_key:
-      user: "{{ item.name }}"
+      user: add_user
       state: present
       key: "{{ lookup('file', './user_public_key.pub') }}"
-    with_items: 
-      - "{{ add_user }}"
 
 # Removing user
   - name: Remove Users
     user:
-      name: "{{ item.name }}"
+      name: remove_user
       state: absent
       remove: yes 
       force: yes
-    with_items:
-      - "{{ remove_user }}"

@@ -36,7 +36,7 @@
     authorized_key:
       user: "{{ item.name }}"
       state: present
-      key: "{{ lookup('file', './${item.user_public_key}.pub') }}"
+      key: "{{ lookup('file', './${user_public_key}.pub') }}"
     with_items: 
       - "{{ add_user }}"
 

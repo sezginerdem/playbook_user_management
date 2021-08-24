@@ -1,4 +1,0 @@
-# To add user write down username and group below
-add_user:
-  - name: testuser1
-    group: testgroup1

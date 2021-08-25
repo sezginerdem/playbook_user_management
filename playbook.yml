@@ -14,10 +14,10 @@
   tasks:
 
 # Creating groups
-  - name: Create Groups
-    group:
-      name: "{{ item.name }}"
-    with_items: "{{ group_name }}"
+#  - name: Create Groups
+#    group:
+#      name: "{{ item.name }}"
+#    with_items: "{{ group_name }}"
 
 # Create users and add to group 
   - name: Add Users
@@ -36,6 +36,6 @@
   - name: Remove Users
     user:
       name: remove_user
-      state: absent
-      remove: yes 
+      state: present
+      remove: yes
       force: yes

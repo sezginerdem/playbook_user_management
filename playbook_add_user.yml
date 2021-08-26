@@ -32,10 +32,3 @@
       state: present
       key: "{{ lookup('file', './user_public_key.pub') }}"
 
-# Removing user
-  - name: Remove Users
-    user:
-      name: remove_user
-      state: absent
-      remove: yes
-      force: yes

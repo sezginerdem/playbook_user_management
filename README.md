@@ -1,4 +1,7 @@
-# User Management
+Medium Article
+https://faun.pub/user-management-6d7674508e2e
+
+# User Management in Ansible Playbook via Jenkins Pipeline-1
 In this article, I explained how to automate the processes of creating users, added public keys to the servers, assigning users to groups and removing them on servers through ansible in the jenkins pipeline.
 
 This scenario will be explained in 2 articles. I have described the first and second steps in this article.

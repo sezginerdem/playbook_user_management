@@ -1,4 +1,8 @@
-#
+Medium Article
+
+https://faun.pub/user-management-in-ansible-playbook-via-jenkins-pipeline-2-317cb7f31fd7
+
+# User Management in Ansible-Playbook via Jenkins Pipeline-2
 In the second article of my user management scenario, I explained the Jenkins configuration and the stages of running the playbook, I created in the previous article, in the Jenkins pipeline.
 
 ## Step 1: Jenkin installation and configuration

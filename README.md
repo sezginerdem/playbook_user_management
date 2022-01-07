@@ -1,4 +1,4 @@
-Medium Article
+Medium Article:
 https://faun.pub/user-management-6d7674508e2e
 
 # User Management in Ansible Playbook via Jenkins Pipeline-1
